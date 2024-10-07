@@ -1,0 +1,7 @@
+Mastodon vServer delaylama.de
+
+Lid-Kindling9-Bagful-Rimless
+
+ALTER USER mastodon WITH ENCRYPTED PASSWORD 'Lid-Kindling9-Bagful-Rimless';
+
+nimdaotsam

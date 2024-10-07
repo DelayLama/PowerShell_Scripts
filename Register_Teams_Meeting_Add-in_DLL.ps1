@@ -1,0 +1,2 @@
+# Register the Teams Meeting Add-in DLL
+Start-Process -FilePath "C:\Windows\System32\regsvr32.exe" -ArgumentList '/n /s /i:user "C:\Program Files (x86)\Microsoft\TeamsMeetingAdd-in\1.24.25503.0\x64\Microsoft.Teams.AddinLoader.dll"' -NoNewWindow -Wait

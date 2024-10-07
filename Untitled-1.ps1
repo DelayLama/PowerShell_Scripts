@@ -1,0 +1,1 @@
+get-aduser -filter "(objectclass=User -and objecttype=Person)"  -searchbase "OU=Benutzer,OU=Benutzer_Gruppen_Computer,DC=wsl-patent,DC=local" -Properties * | %{$_ | Set-ADUser -samaccountname $_.samaccountname.toLower()}

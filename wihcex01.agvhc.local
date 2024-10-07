@@ -1,0 +1,16 @@
+wihcex01.agvhc.local
+
+$Port = 2525
+$Server = "<MailboxServerName>"
+
+New-ReceiveConnector -Name RCPT_Verify -Bindings "0.0.0.0:\$($Port)" -TransportRole HubTransport -RemoteIPRanges 0.0.0.0-255.255.255.255 -AuthMechanism None -PermissionGroups Anonymous -Server \$Server
+\$Command = { New-NetFirewallRule -DisplayName "MSExchange Recipient verify" -Direction inbound -LocalPort $Port -Protocol TCP -Action ALLOW }
+Invoke-Command -ComputerName $Server -ScriptBlock $Command
+
+
+
+https://github.com/microsoft/terminal/releases/download/v1.18.3181.0/Microsoft.WindowsTerminal_1.18.3181.0_8wekyb3d8bbwe.msixbundle
+
+
+Invoke-WebRequest -Uri https://github.com/microsoft/terminal/releases/download/v1.18.3181.0/Microsoft.WindowsTerminal_1.18.3181.0_8wekyb3d8bbwe.msixbundle -OutFile C:\Temp\Microsoft.WindowsTerminal_1.18.3181.0_8wekyb3d8bbwe.msixbundle 
+Add-AppxPackage -path C:\Temp\Microsoft.WindowsTerminal_1.18.3181.0_8wekyb3d8bbwe.msixbundle

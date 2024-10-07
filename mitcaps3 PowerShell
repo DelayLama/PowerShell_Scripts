@@ -1,0 +1,9 @@
+$UserCredential = Get-Credential
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://mitcaps3.mainz.mitcaps.de/PowerShell/ -Authentication Kerberos -Credential $UserCredential
+Import-PSSession $Session -DisableNameChecking
+
+
+$RecvConn = Get-ReceiveConnector -Identity "mitcaps3\Anonymous"
+$RecvConn.RemoteIPRanges += "195.191.20.15"
+Set-ReceiveConnector -Identity "mitcaps3\Anonymous" -RemoteIPRanges $RecvConn.RemoteIPRanges
+
