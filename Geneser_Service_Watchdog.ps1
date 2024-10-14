@@ -1,5 +1,5 @@
 # Directory where logs are stored
-$logDirectory = "C:\Path\To\Your\Logs"
+$logDirectory = "D:\Genese_Service_Watchdog\Logs"
 # Log file name pattern
 $logFilePattern = "LogFile_{0:yyyy-MM-dd}.txt"
 
