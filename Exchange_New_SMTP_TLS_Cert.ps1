@@ -12,8 +12,5 @@ $Cert = Get-ExchangeCertificate -Thumbprint 63DF07BDE37AFE89C4CE02DF6F2312E1AFD0
 $TLSCertificateName = "<i>$($Cert.Issuer)<s>$($Cert.Subject)"
 
 Get-SendConnector | Set-SendConnector -TlsCertificateName $TLSCertificateName
-Write-Host "WARNUNG: Der Befehl wurde erfolgreich abgeschlossen, es wurden jedoch keine Einstellungen von 'Outbound to Office 365 - ba686822-d6d5-4965-823f-32d564d12fba' geändert."
 Set-ReceiveConnector -Identity "WIHCEX01\Default Frontend WIHCEX01" -TlsCertificateName $TLSCertificateName
-Write-Host "WARNUNG: Der Befehl wurde erfolgreich abgeschlossen, es wurden jedoch keine Einstellungen von 'WIHCEX01\Default Frontend WIHCEX01' geändert."
 Set-ReceiveConnector -Identity "WIHCEX01\Client Frontend WIHCEX01" -TlsCertificateName $TLSCertificateName
-Write-Host "WARNUNG: Der Befehl wurde erfolgreich abgeschlossen, es wurden jedoch keine Einstellungen von 'WIHCEX01\Client Frontend WIHCEX01' geändert."
